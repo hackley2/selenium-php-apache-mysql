@@ -51,7 +51,7 @@ RUN apt-get update && apt-get -y install libapache2-mod-php5 apache2
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-EXPOSE 80
+
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -64,6 +64,7 @@ ADD services/apache.sh /etc/service/apache/run
 RUN rm /etc/apache2/sites-enabled/000-default.conf
 ADD services/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
+EXPOSE 80:80
 RUN service apache2 start
 
 CMD ["/opt/bin/entry_point.sh"]
