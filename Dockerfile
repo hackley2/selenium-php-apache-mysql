@@ -66,5 +66,5 @@ ADD services/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
 EXPOSE 80:80
 
-RUN bash /opt/bin/entry_point.sh &
 RUN service apache2 start
+CMD ["/opt/bin/entry_point.sh"]
