@@ -14,12 +14,13 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-# PHP Packages.
+# PHP Packages and databases
 RUN apt-get update && apt-get -y install \
     php5 php5-fpm php5-gd php5-ldap \
-    php5-sqlite php5-pgsql php-pear php5-mysql php5-curl \
-    php5-mcrypt php5-xmlrpc php5-intl php5-xdebug \
-    build-essential curl mysql-client
+    php5-pgsql php-sqlite php-pear php5-mysql php5-curl \
+    php5-mcrypt php5-cli php5-xmlrpc php5-intl \
+    build-essential curl mysql-client php-gettext xvfb redis-server
+    mysql-server
 
 ##
 # Now all our stuff.
@@ -46,7 +47,7 @@ RUN echo "export PATH=$PATH" >> $HOME/.bashrc \
     && echo "export TERM=xterm" >> $HOME/.bashrc
 
 
-
+# Apache
 RUN apt-get update && apt-get -y install libapache2-mod-php5 apache2
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
