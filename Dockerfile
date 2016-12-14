@@ -16,9 +16,9 @@ ENV LC_ALL en_US.UTF-8
 
 # PHP Packages and databases
 RUN apt-get update && apt-get -y install \
-    php5 php5-fpm php5-gd php5-ldap \
-    php5-pgsql php-sqlite php-pear php5-mysql php5-curl \
-    php5-mcrypt php5-cli php5-xmlrpc php5-intl \
+    php php-fpm php-gd php-ldap \
+    php-pgsql php-sqlite3 php-pear php-mysql php-curl \
+    php-mcrypt php-cli php-xmlrpc php-intl \
     build-essential curl mysql-client php-gettext xvfb redis-server mysql-server
 
 ##
@@ -47,7 +47,7 @@ RUN echo "export PATH=$PATH" >> $HOME/.bashrc \
 
 
 # Apache
-RUN apt-get update && apt-get -y install libapache2-mod-php5 apache2
+RUN apt-get update && apt-get -y install libapache2-mod-php apache2
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
