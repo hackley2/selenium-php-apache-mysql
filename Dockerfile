@@ -19,8 +19,7 @@ RUN apt-get update && apt-get -y install \
     php5 php5-fpm php5-gd php5-ldap \
     php5-pgsql php-sqlite php-pear php5-mysql php5-curl \
     php5-mcrypt php5-cli php5-xmlrpc php5-intl \
-    build-essential curl mysql-client php-gettext xvfb redis-server
-    mysql-server
+    build-essential curl mysql-client php-gettext xvfb redis-server mysql-server
 
 ##
 # Now all our stuff.
