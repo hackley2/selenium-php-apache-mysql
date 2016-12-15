@@ -1,4 +1,4 @@
-FROM selenium/standalone-firefox
+FROM selenium/standalone-chrome
 
 USER root
 
