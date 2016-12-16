@@ -70,8 +70,6 @@ ADD services/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
 EXPOSE 80:80
 
-# start apache, mysql, redis, selenium
-RUN a2enmod rewrite
-RUN apache2ctl start
+# apache, mysql, redis, and selenium can now all be started on demand as needed
 
 CMD ["/opt/bin/entry_point.sh"]
