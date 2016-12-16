@@ -57,12 +57,9 @@ RUN echo "export PATH=$PATH" >> $HOME/.bashrc \
 # Apache
 RUN apt-get update && apt-get -y install libapache2-mod-php5.6 apache2
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-RUN a2enmod rewrite
-
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
 
 RUN mkdir /etc/service
 RUN mkdir /etc/service/apache
@@ -74,6 +71,7 @@ ADD services/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 EXPOSE 80:80
 
 # start apache, mysql, redis, selenium
-RUN service apache2 start
+RUN a2enmod rewrite
+RUN apache2ctl start
 
 CMD ["/opt/bin/entry_point.sh"]
