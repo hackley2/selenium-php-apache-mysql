@@ -26,7 +26,7 @@ RUN apt-get -y install php5.6
 RUN apt-get -y install \
     php5.6-fpm php5.6-gd php5.6-ldap \
     php5.6-pgsql php5.6-sqlite php-pear php5.6-mysql php5.6-curl \
-    php5.6-mcrypt php5.6-cli php5.6-xmlrpc php5.6-intl \
+    php5.6-mcrypt php5.6-cli php5.6-xmlrpc php5.6-xml php5.6-intl \
     build-essential curl mysql-client php-gettext xvfb redis-server mysql-server
 
 ##
