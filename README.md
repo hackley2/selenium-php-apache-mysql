@@ -1,5 +1,5 @@
 # selenium-php-apache-mysql
-This Docker image containing everything needed to run BDD and TDD tests using Selenium, PHP, Apache, MySQL, and Redis on a CI server such as Bitbucket Pipelines.
+Docker image containing everything needed to run BDD and TDD tests using Selenium, PHP, Apache, MySQL, and Redis on a CI server such as Bitbucket Pipelines.
 
 # Supported Tags:
 latest, php5.6
